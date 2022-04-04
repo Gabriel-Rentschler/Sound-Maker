@@ -1,0 +1,33 @@
+﻿  main.cpp
+C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Textbox.h(72,22): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Textbox.h(99,30): warning C4018: '<=': incompatibilidade de signed/unsigned
+C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Textbox.h(102,35): warning C4018: '>': incompatibilidade de signed/unsigned
+C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Textbox.h(116,32): warning C4244: '=': conversão de 'const T' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Textbox.h(117,32): warning C4244: '=': conversão de 'const T' para 'T', possível perda de dados
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Textbox.h(152,21): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Sounds.h(17,19): warning C4244: 'inicializando': conversão de 'double' para 'short', possível perda de dados
+C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Sounds.h(18,22): warning C4244: '=': conversão de 'double' para 'short', possível perda de dados
+C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Sounds.h(26,19): warning C4244: 'inicializando': conversão de 'double' para 'short', possível perda de dados
+C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Sounds.h(27,22): warning C4244: '=': conversão de 'double' para 'short', possível perda de dados
+C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Sounds.h(34,11): warning C4244: 'inicializando': conversão de 'double' para 'int', possível perda de dados
+C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Sounds.h(37,19): warning C4244: 'inicializando': conversão de 'double' para 'short', possível perda de dados
+C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Sounds.h(46,19): warning C4244: 'inicializando': conversão de 'double' para 'short', possível perda de dados
+C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Oscillator.h(6,1): warning C4005: 'HERTZ': redefinição de macro
+C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Sounds.h(10): message : consulte a definição anterior de 'HERTZ'
+  SoundProgram.vcxproj -> C:\Users\Kyouki\Documents\SoundProgram\Debug\SoundProgram.exe
