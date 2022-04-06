@@ -11,9 +11,9 @@ class Textbox {
 public:
 	Textbox() { }
 
-	Textbox(int size, sf::Color color, bool sel) {
+	Textbox(int size, sf::Color txtcolor, bool sel) {
 		textbox.setCharacterSize(size);
-		textbox.setFillColor(color);
+		textbox.setFillColor(txtcolor);
 		isSelected = sel;
 		if (sel) {
 			textbox.setString("_");
@@ -94,7 +94,7 @@ public:
 	void typedOn(sf::Event input) {
 		if (isSelected) {
 			int charTyped = input.text.unicode;
-			if (charTyped < 128) {
+			if (charTyped > 47 && charTyped < 58 || charTyped == 8) {
 				if (hasLimit) {
 					if (text.str().length() <= limit) {
 						inputLogic(charTyped);
@@ -126,10 +126,33 @@ public:
 		}
 		
 	}
+
+	void arrowControl(sf::Event key) {
+		if (isSelected) {
+			int value;
+			if (sf::Keyboard::Up == key.key.code) {
+				value = atoi(text.str().c_str());
+				value++;
+				
+			}
+			else if (sf::Keyboard::Down == key.key.code) {
+				value = atoi(text.str().c_str());
+				value--;
+			}
+			else {
+				return;
+			}
+			text.str("");
+			text << std::to_string(value);
+			textbox.setString(text.str() + "_");
+		}
+	}
 private:
 	sf::Text textbox;
 	std::ostringstream text;
 	sf::RectangleShape shape;
+	sf::Font font;
+	sf::Color bgcolor;
 	bool isSelected = false;
 	bool hasLimit = false;
 	int limit;

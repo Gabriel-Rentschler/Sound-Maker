@@ -20,7 +20,7 @@ C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Textbox.h(117,32): warning C
           [
               T=int
           ]
-C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Textbox.h(152,21): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Textbox.h(175,21): warning C4018: '<': incompatibilidade de signed/unsigned
 C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Sounds.h(17,19): warning C4244: 'inicializando': conversão de 'double' para 'short', possível perda de dados
 C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Sounds.h(18,22): warning C4244: '=': conversão de 'double' para 'short', possível perda de dados
 C:\Users\Kyouki\Documents\SoundProgram\SoundProgram\Sounds.h(26,19): warning C4244: 'inicializando': conversão de 'double' para 'short', possível perda de dados

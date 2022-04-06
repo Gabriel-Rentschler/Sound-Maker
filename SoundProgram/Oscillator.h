@@ -19,7 +19,7 @@ public:
 	}
 
 	void setAmplitude(double amplitude) {
-		amp = amplitude;
+		amp = amplitude / 1000;
 	}
 
 	void play() {

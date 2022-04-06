@@ -12,11 +12,23 @@ int main() {
 
     sf::Font roboto;
     roboto.loadFromFile("fonts/Roboto-Black.ttf");
-    Textbox textbox1(15, sf::Color::White, false, "100");
-    textbox1.setFont(roboto);
-    textbox1.setPosition({ 100, 100 });
-    textbox1.setBackground({ 100, 20 }, sf::Color::Blue);
-    textbox1.setLimit(true, 4);
+
+    sf::Color bgcolor(41, 150, 38, 191);
+
+    Textbox inputFreqOscillator1(15, sf::Color::White, false, "0");
+    Textbox inputAmpOscillator1(15, sf::Color::White, false, "0");
+
+    #pragma region textboxSetup
+    inputFreqOscillator1.setFont(roboto);
+    inputFreqOscillator1.setPosition({ 100, 100 });
+    inputFreqOscillator1.setBackground({ 100, 20 }, bgcolor);
+    inputFreqOscillator1.setLimit(true, 4);
+
+    inputAmpOscillator1.setFont(roboto);
+    inputAmpOscillator1.setPosition({ 100, 150 });
+    inputAmpOscillator1.setBackground({ 100, 20 }, bgcolor);
+    inputAmpOscillator1.setLimit(true, 4);
+    #pragma endregion
 
     Oscillator oscillator(100, 0.8);
 
@@ -27,16 +39,26 @@ int main() {
     while (window.isOpen()) {
         sf::Event event;
 
+        #pragma region textboxSelect
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-            textbox1.mouseSelect(window);
-            if (!textbox1.getSelected()) {
-                double freq = atof(textbox1.getText().c_str());
-                oscillator.setFrequency(freq);
-            }
+            inputFreqOscillator1.mouseSelect(window);
         }
-        if (clock.getElapsedTime().asSeconds() > 1) {
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+            inputAmpOscillator1.mouseSelect(window);
+        }
+        if (inputFreqOscillator1.getSelected()) {
+            double freq = atof(inputFreqOscillator1.getText().c_str());
+            oscillator.setFrequency(freq);
+        }
+        if (inputAmpOscillator1.getSelected()) {
+            double amp = atof(inputAmpOscillator1.getText().c_str());
+            oscillator.setAmplitude(amp);
+        }
+        #pragma endregion
+
+        if (clock.getElapsedTime().asMicroseconds() > 1000000) {
             oscillator.stop();
-            clock.restart().asSeconds();
+            clock.restart().asMicroseconds();
             oscillator.play();
         }
         
@@ -48,12 +70,19 @@ int main() {
                 window.close();
 
             case sf::Event::TextEntered:
-                textbox1.typedOn(event);
+                inputFreqOscillator1.typedOn(event);
+                inputAmpOscillator1.typedOn(event);
+            case sf::Event::KeyPressed:
+                inputFreqOscillator1.arrowControl(event);
+                inputAmpOscillator1.arrowControl(event);
             }
         }
 
         window.clear();
-        textbox1.drawTo(window);
+        #pragma region drawObjects
+        inputFreqOscillator1.drawTo(window);
+        inputAmpOscillator1.drawTo(window);
+        #pragma endregion
         window.display();
     }
 
